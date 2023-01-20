@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'todo-list';
+  title = 'Todo-List';
+
+  todoList:any[]=[];
+  enterTask(item:string){
+    this.todoList.push({id:this.todoList.length,name:item});
+    console.warn(this.todoList);
+  }
+  removefromlist(id:number){
+    console.warn(id);
+    this.todoList=this.todoList.filter(item=>item.id!==id);
+  }
 }
